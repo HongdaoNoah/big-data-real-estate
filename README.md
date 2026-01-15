@@ -40,3 +40,11 @@ big-data-real-estate/
 - `combine_dvf_insee.py`  
   Merges DVF real estate transactions with INSEE data at commune level.
 
+## Data architecture
+- Data lake (raw / formatted / usage)
+- Data excluded from GitHub
+
+## Analysis
+- Spatial analysis by commune
+- Temporal evolution of prices
+- Correlation with demographic indicators

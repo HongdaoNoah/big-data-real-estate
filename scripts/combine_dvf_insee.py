@@ -69,3 +69,7 @@ print("\nSaving combined dataset...")
 df_combined.to_parquet(OUTPUT_PATH, index=False)
 
 print("Combined file saved to:", OUTPUT_PATH)
+# Also save to CSV for Elasticsearch
+csv_path = OUTPUT_PATH.with_suffix(".csv")
+df_combined.to_csv(csv_path, index=False, encoding="utf-8")
+print("CSV file saved to:", csv_path)

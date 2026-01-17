@@ -8,7 +8,10 @@ import json
 
 ES_URL = os.getenv("ES_URL", "http://localhost:9200")
 INDEX = os.getenv("ES_INDEX", "dvf_insee_2023")
-CSV_PATH = os.getenv("CSV_PATH", "dvf_insee_2023_es.csv")
+CSV_PATH = os.getenv(
+    "CSV_PATH",
+    "data/usage/real_estate_commune_2023.csv"
+)
 
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "5000"))
 

@@ -3,6 +3,8 @@ import sys
 import math
 import pandas as pd
 import requests
+import json
+
 
 ES_URL = os.getenv("ES_URL", "http://localhost:9200")
 INDEX = os.getenv("ES_INDEX", "dvf_insee_2023")
@@ -120,7 +122,8 @@ def main():
                 doc["location"] = {"lat": latn, "lon": lonn}
 
             actions.append(f'{{"index":{{"_index":"{INDEX}"}}}}')
-            actions.append(pd.io.json.dumps(doc, ensure_ascii=False))
+            actions.append(json.dumps(doc, ensure_ascii=False))
+
 
         bulk_index(actions)
         total += len(chunk)

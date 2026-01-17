@@ -45,7 +45,7 @@ df_dvf = df_dvf.drop_duplicates(subset=["code_commune"])
 # ----------------------------
 print("Merging DVF and INSEE data...")
 df_combined = df_dvf.merge(df_insee, on="code_commune", how="left")
-
+df_combined["department"]= df_combined["code_commune"].str[:2]
 # ----------------------------
 # Quick checks
 # ----------------------------

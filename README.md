@@ -48,3 +48,27 @@ big-data-real-estate/
 - Spatial analysis by commune
 - Temporal evolution of prices
 - Correlation with demographic indicators
+
+DVF (csv)
+   │
+   ├── Python formatting
+   │      ↓
+   │   parquet (dvf)
+   │
+INSEE (csv)
+   │
+   ├── Python formatting
+   │      ↓
+   │   parquet (insee)
+   │
+   └───► Spark (Docker)
+             - join
+             - aggregation
+             - group by commune
+             ↓
+        real_estate_commune_2023.parquet
+        real_estate_commune_2023.csv
+             ↓
+        Elasticsearch
+             ↓
+           Kibana

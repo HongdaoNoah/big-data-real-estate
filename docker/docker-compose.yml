@@ -1,6 +1,14 @@
 version: "3.8"
 
 services:
+  spark:
+    image: apache/spark:3.5.0
+    container_name: spark
+    working_dir: /opt/project
+    volumes:
+      - ../:/opt/project
+    command: ["bash", "-lc", "sleep infinity"]
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
     container_name: elasticsearch
@@ -23,3 +31,4 @@ services:
 
 volumes:
   es_data:
+
